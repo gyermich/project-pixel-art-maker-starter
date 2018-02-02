@@ -5,23 +5,24 @@
 
 function makeGrid() {
     var height = $('#inputHeight').val();
-    var width = $('#inputWidth').val();
-    var grid = ''
-        for (row = 0; row > parseInt(height); row++){
-            grid += '<tr>';
-            for (column = 0; parseInt(column) > 0; column++){
-                grid +=  '<td></td>';
-            }
-            grid += '</tr>';
-        };
-    console.log(grid);
-    $('#pixelCanvas').append(grid);
+    var width = $('#inputWeight').val();
+    var grid = '';
 
+    for (row = 0; row < parseInt(height); row++){
+        grid += '<tr>';
+        for (column = 0; column < parseInt(width); column++){
+            grid +=  '<td></td>';
+        }
+        grid += '</tr>';
+    }
+    $('#pixelCanvas').html(grid);
 };
 
 $( document ).ready(function() {
-
-    $('#sizePicker').submit(makeGrid());
+    $('#sizePicker').submit(function(e){
+        e.preventDefault();
+        makeGrid();
+    });
 
 });
 
