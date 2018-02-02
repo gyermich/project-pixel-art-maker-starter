@@ -6,7 +6,7 @@ function makeGrid() {
     while ( height > 0 ){
         grid += '<tr>';
         for (column = 0; column < width; column++){
-            grid +=  '<td></td>';
+            grid += '<td></td>';
         };
         grid += '</tr>';
         height --;
