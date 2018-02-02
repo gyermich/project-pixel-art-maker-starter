@@ -1,20 +1,17 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
 function makeGrid() {
     var height = parseInt($('#inputHeight').val());
     var width = parseInt($('#inputWeight').val());
     var grid = '';
 
-    for (row = 0; row < height; row++){
+    while ( height > 0 ){
         grid += '<tr>';
         for (column = 0; column < width; column++){
             grid +=  '<td></td>';
-        }
+        };
         grid += '</tr>';
+        height --;
     }
+
     $('#pixelCanvas').html(grid);
 
     $('td').mousedown(function(e){
@@ -28,8 +25,5 @@ $( document ).ready(function() {
         e.preventDefault();
         makeGrid();
     });
-
-
-
 });
 
