@@ -16,6 +16,11 @@ function makeGrid() {
         grid += '</tr>';
     }
     $('#pixelCanvas').html(grid);
+
+    $('td').mousedown(function(e){
+        var color = $('#colorPicker').val();
+        $( e.target ).css('background-color', color);
+    })
 };
 
 $( document ).ready(function() {
@@ -23,6 +28,8 @@ $( document ).ready(function() {
         e.preventDefault();
         makeGrid();
     });
+
+
 
 });
 
